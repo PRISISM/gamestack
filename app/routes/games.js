@@ -20,8 +20,9 @@ router.get('/', function(req, res) {
 		},
 		function(err, response, body) {
 			var jsonGames = JSON.parse(body);
-			res.render('game', {
-				title: 'Games',
+			// console.log(jsonGames);
+			res.render('all-games', {
+				title: 'All Games',
 				user: req.user,
 				body: jsonGames
 			});

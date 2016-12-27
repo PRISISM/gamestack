@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	.container
+		h1 Games
+		ul.list-group
+			for game in body.results
+				if (body.results.indexOf(game) % 6 === 0)
+					div.row
+				div.col-sm-2
+					a(href='/games/' + game.id)
+						div.panel.panel-default.user-panel-container
+							div.panel-heading.text-center
+								p.user-panel-title #{game.name}
+							div.panel-body.user-panel-div
+								if game.image
+									img.game-search-image(src=game.image.small_url)
+
+					
