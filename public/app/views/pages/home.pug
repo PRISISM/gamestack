@@ -1,0 +1,66 @@
+extends layout
+
+block content
+
+  h1.text-center.home-title gamestack
+  p.lead.text-center Cut the clutter, keep track.
+  hr
+
+  form(action='/games/search', method='get')
+    div.row
+      div.col-md-12
+        div#custom-search-input
+          div.input-group.col-md-12
+            input(type='text', placeholder='Shin Megami Tensei', name="keyword").form-control.input-lg
+            span.input-group-btn
+              button.btn.btn-info.btn-lg
+                i.fa.fa-search
+
+  div.row.service-rows
+    div.col-lg-12.text-center
+      h1.services-heading SERVICES
+      i.text-muted What does gamestack have to offer you?
+
+  div.col-md-12.services-container
+    div.col-md-4.text-center
+      span.fa-stack.fa-4x
+        i.fa.fa-circle.fa-stack-2x.fa-primary
+        i.fa.fa-gamepad.fa-stack-1x.fa-inverse
+      h3 Put your games online!
+      p Manage your library easily and efficiently
+
+    div.col-md-4.text-center
+      span.fa-stack.fa-4x
+        i.fa.fa-circle.fa-stack-2x.fa-primary
+        i.fa.fa-info.fa-stack-1x.fa-inverse
+      h3 Find any game and everything about it!
+      p Individual game data presented straight to you
+
+    div.col-md-4.text-center
+      span.fa-stack.fa-4x
+        i.fa.fa-circle.fa-stack-2x.fa-primary
+        i.fa.fa-laptop.fa-stack-1x.fa-inverse
+      h3 Interact with others!
+      p View other users accounts and compare your collections
+
+  //- .row
+  //-   .col-sm-6
+  //-     h2 Heading
+  //-     p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+  //-     p
+  //-       a.btn.btn-default(href='#', role='button') View details »
+  //-   .col-sm-6
+  //-     h2 Heading
+  //-     p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+  //-     p
+  //-       a.btn.btn-default(href='#', role='button') View details »
+  //-   .col-sm-6
+  //-     h2 Heading
+  //-     p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+  //-     p
+  //-       a.btn.btn-default(href='#', role='button') View details »
+  //-   .col-sm-6
+  //-     h2 Heading
+  //-     p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+  //-     p
+  //-       a.btn.btn-default(href='#', role='button') View details »

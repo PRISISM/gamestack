@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	div.container
+		div.well
+			h1.nav-title #{foundUser.username}'s stack
+			p.text-muted Joined on #{moment(foundUser.created_on).format('DD MMMM, YYYY')}

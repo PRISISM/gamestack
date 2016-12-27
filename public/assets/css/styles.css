@@ -1,0 +1,105 @@
+body {
+	padding-top: 65px;
+}
+
+.services-heading {
+	font-family: 'Raleway';
+	font-weight: 800;
+	margin-top: 70px;
+}
+
+.service-row {
+	padding-bottom: 20px;
+}
+
+.nav-title {
+	font-family: 'Baloo Thambi';
+}
+
+.home-title {
+	font-family: 'Baloo Thambi';
+	font-size: 400%;
+}
+
+.wide {
+	width: 100%;
+	height: 475px;
+	background-image:url('https://consumermediallc.files.wordpress.com/2014/06/crikey.png');
+	background-size: cover;
+}
+
+.services-container {
+	margin-top: 30px;
+}
+
+/* Search Results */
+
+.search-result {
+	margin-top: 25px;
+	padding: 10px;
+	box-shadow: 1px 2px 20px 1px #d3d3d3;
+}
+
+.game-search-image {
+	margin-left: auto;
+	margin-right: auto;
+	max-width:100%;
+	max-height:100%;
+	display: block;
+}
+
+.game-result-title {
+	font-family: 'Montserrat';
+}
+
+.game-result-subtext {
+	font-family: 'Montserrat';
+	margin-bottom: 5px;
+}
+
+.game-result-description {
+	margin-top: 5px;
+	font-family: 'Roboto';
+}
+
+.platform-labels-row {
+	margin-bottom: 0px;
+}
+
+.platform-labels {
+	margin: 0px 10px 5px 0px;
+	display: inline-block;
+}
+
+/*Search Bar*/
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}

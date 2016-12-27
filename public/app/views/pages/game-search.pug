@@ -1,0 +1,63 @@
+extends layout
+
+block content
+
+    div.container
+        h1 Search results for: 
+            i #{query}
+        h3.lead.text-muted #{body.number_of_total_results}
+            |   Results
+        hr
+        ul.list-group
+            div.col-sm-12
+                for game in body.results
+                    div.row.search-result
+                        div.col-sm-3
+                            if game.image
+                                img(src=game.image.thumb_url).img-rounded.game-search-image
+                        div.col-sm-9
+                            h3.game-result-title #{game.name}
+                            if game.original_release_date
+                                p.text-muted.game-result-subtext Released on #{moment(game.original_release_date).format('DD MMMM, YYYY')}
+                            else
+                                p.text-muted.game-result-subtext Unknown release date
+
+                            if game.platforms           
+                                div.row-fluid.platform-labels-row
+                                    for platform in game.platforms
+                                            span.label.label-default.platform-labels=platform.abbreviation
+
+                            p.game-result-description #{game.deck}
+
+                            div.btn-group
+                                a(role='button', href='/games/' + game.id).btn.btn-primary View Page
+                                if user
+                                    if (user.games.indexOf(game.id))
+                                        button(type='button', onclick="testSend('" + game.id + "')").btn.btn-primary Add to Stack
+                                    else
+                                        button(type='button', disabled=true).btn.btn-primary In Stack
+                                else
+                                    button(type='button', disabled=true).btn.btn-primary Login to Add
+
+        - var number= Math.ceil(body.number_of_total_results / 10)
+
+        div.text-center
+
+            ul#pagination-main.pagination
+
+        script.
+            var myPage = #{myPage};
+            var number = #{number};
+            var path = '#{path}';
+            var query = '#{query}';
+            $('#pagination-main').pagination({
+                currentPage : myPage,
+                items: number,
+                prevText: '<span aria-hidden="true">&laquo;</span>',
+                nextText: '<span aria-hidden="true">&raquo;</span>',
+                displayedPages: 10,
+                hrefTextPrefix: path + '?keyword=' + query + '&page=',
+                cssStyle : 'page-link',
+                selectOnClick: false,
+                ellipsePageSet: false
+            });

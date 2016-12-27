@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    h1
+      span(class="fa fa-sign-in") 
+      |  Login
+
+    p.lead Please enter your login details.
+    form(role='form', action="/login",method="post", style='max-width: 300px;')
+      .form-group
+          input.form-control(type='text', name="username", placeholder='Username')
+      .form-group
+        input.form-control(type='password', name="password", placeholder='Password')
+      button.btn.btn-lg.btn-warning(type='submit') Login
+
+      hr
+
+      p Need an account?  
+        a(href='/register')
+          | Register here.
