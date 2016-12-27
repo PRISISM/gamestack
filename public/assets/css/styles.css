@@ -71,6 +71,23 @@ body {
 	display: inline-block;
 }
 
+/* User Page */
+
+.user-panel-container {
+	box-shadow: 1px 2px 20px 1px #d3d3d3;
+}
+
+.user-panel-div {
+	padding: 0px 0px 0px 0px;
+}
+
+.user-panel-title {
+	font-family: 'Open Sans', sans-serif;
+	text-decoration: none;
+}
+
+
+
 /*Search Bar*/
 #custom-search-input{
     padding: 3px;

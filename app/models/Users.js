@@ -11,8 +11,8 @@ var userSchema = new Schema({
     username: {type: String, required: true, unique: true},
     password: String,
     created_at: {type:Date, default: Date.now},
-    games : []
-});
+    games : { type: Object, default: {} }
+}, {minimize : false});
 
 // the schema is useless so far
 // we need to create a model using it

@@ -32,7 +32,8 @@ block content
                             div.btn-group
                                 a(role='button', href='/games/' + game.id).btn.btn-primary View Page
                                 if user
-                                    if (user.games.indexOf(game.id))
+                                    //- user.games.indexOf(game.id
+                                    if !(game.id in user.games)
                                         button(type='button', onclick="testSend('" + game.id + "')").btn.btn-primary Add to Stack
                                     else
                                         button(type='button', disabled=true).btn.btn-primary In Stack

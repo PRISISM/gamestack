@@ -1,7 +1,23 @@
 extends layout
 
 block content
+
 	div.container
 		div.well
 			h1.nav-title #{foundUser.username}'s stack
 			p.text-muted Joined on #{moment(foundUser.created_on).format('DD MMMM, YYYY')}
+
+		if (Object.keys(foundUser.games).length != 0) 
+			for game in Object.keys(foundUser.games)
+				//- - console.log(game);
+				// for each game, request on server side 
+				// display name and thumb? 
+
+				div.col-sm-3
+					a(href='/games/' + game)
+						div.panel.panel-default.user-panel-container
+							div.panel-heading.text-center
+								p.user-panel-title #{foundUser.games[game].results.name}
+							div.panel-body.user-panel-div
+								if foundUser.games[game].results.image.length !== 0
+									img.game-search-image(src=foundUser.games[game].results.image.small_url)

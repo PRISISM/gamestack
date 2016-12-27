@@ -36,6 +36,7 @@ app.use(require('express-session')({
 app.set('views', path.join(__dirname,  'public/app/views/pages'));
 app.set('view engine', 'pug');
 app.locals.moment = require('moment');
+app.set('view options', { pretty: true });
 
 // Connect MongoDB
 mongoose.connect(config.database, function(err,db){
