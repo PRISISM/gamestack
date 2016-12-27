@@ -6,13 +6,16 @@ var mongoose = require('mongoose');
 router = express.Router();
 
 router.get('/', function(req, res) {
+	if (typeof req.query.page === 'undefined')
+		req.query.page = 1;
 
 	request({
 			url: 'http://giantbomb.com/api/games',
 			qs: {
 				api_key: config.gbApiKey,
 				format: 'json',
-				field_list: 'name,id,image'
+				field_list: 'name,id,image',
+				offset: (req.query.page * 100) - 100
 			},
 			headers: {
 				'User-Agent': 'request'
@@ -20,11 +23,12 @@ router.get('/', function(req, res) {
 		},
 		function(err, response, body) {
 			var jsonGames = JSON.parse(body);
-			// console.log(jsonGames);
 			res.render('all-games', {
 				title: 'All Games',
 				user: req.user,
-				body: jsonGames
+				body: jsonGames,
+				myPage: parseInt(req.query.page,10),
+				path: req.baseUrl + req.path
 			});
 			console.log(req.user);
 

@@ -2,7 +2,6 @@ extends layout
 
 block content
 	.container
-		h1 Games
 		ul.list-group
 			for game in body.results
 				if (body.results.indexOf(game) % 6 === 0)
@@ -15,5 +14,29 @@ block content
 							div.panel-body.user-panel-div
 								if game.image
 									img.game-search-image(src=game.image.small_url)
+								else
+									img.game-search-image(src='/public/assets/img/mystery.png')
+	hr
 
-					
+	div.row
+		div.text-center
+			ul#pagination-main.pagination
+
+		- var number= Math.ceil(body.number_of_total_results / 100)
+		
+		script.
+			var myPage = #{myPage};
+			var number = #{number};
+			var path = '#{path}';
+			var query = '#{query}';
+			$('#pagination-main').pagination({
+				currentPage : myPage,
+				items: number,
+				prevText: '<span aria-hidden="true">&laquo;</span>',
+				nextText: '<span aria-hidden="true">&raquo;</span>',
+				displayedPages: 10, 
+				hrefTextPrefix: '?page=',
+				cssStyle : 'page-link',
+				selectOnClick: false,
+				ellipsePageSet: false
+			});
