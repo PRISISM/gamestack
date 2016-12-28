@@ -4,7 +4,7 @@ var app = express();
 var bodyParser = require('body-parser'); 
 var cookieParser = require('cookie-parser');
 var flash = require('connect-flash');
-var config = require('./config');
+// var config = require('./config');
 var path = require('path');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -39,7 +39,7 @@ app.locals.moment = require('moment');
 app.set('view options', { pretty: true });
 
 // Connect MongoDB
-mongoose.connect(config.database, function(err,db){
+mongoose.connect(ENV[database], function(err,db){
     if (!err){
         console.log('Connected to db!');
     } else{
@@ -110,5 +110,5 @@ app.use(function(req, res, next) {
 //   }
 // ));
 // Start Server
-app.listen(config.port);
-console.log('Server started on port', config.port);
+app.listen(ENV[port]);
+console.log('Server started on port', ENV[port]);

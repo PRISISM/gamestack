@@ -2,7 +2,7 @@ var express = require('express');
 var passport = require('passport');
 var User = require('../models/Users');
 var path = require('path');
-var config = require('../../config');
+// var config = require('../../config');
 var router = express.Router();
 
 router.get('/', function(req, res) {

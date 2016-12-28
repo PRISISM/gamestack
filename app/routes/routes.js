@@ -5,7 +5,7 @@ var request = require('request');
 
 var router = express.Router();
 var path = require('path');
-var config = require('../../config');
+// var config = require('../../config');
 
 // put auth in as a middleware for specific routes - whenever they want to write to app
 
@@ -25,7 +25,7 @@ module.exports = function(app, passport) {
         request({
                 url: 'http://www.giantbomb.com/api/game/3030-' + req.body.game,
                 qs: {
-                    api_key: config.gbApiKey,
+                    api_key: ENV[gbApiKey],
                     format: 'json',
                     field_list: 'name,id,image'
                 },
