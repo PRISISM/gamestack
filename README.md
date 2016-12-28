@@ -18,7 +18,7 @@ The following technologies/tools were used for developing *gamestack*:
 * Giant Bomb API
 
 ### Lessons Learned
-This was my first approach at Node and building larger scale web applications in general. These were a few of the lessons I learned from this small project.
+This was my first approach at Node and building larger scale web applications from what I was used to. These were a few of the lessons I learned from this small project.
 
 * Structure the application, including routes, from the very start. 
 * Front-end frameworks like React or Angular would have made this a lot easier and less straining on the server side. 
