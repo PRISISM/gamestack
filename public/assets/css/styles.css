@@ -1,6 +1,18 @@
+/* Main and Header/Footer */
+
 body {
 	padding-top: 65px;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
 
 .services-heading {
 	font-family: 'Raleway';
