@@ -114,7 +114,7 @@ router.get('/:game', function(req, res, next) {
 
 			else
 				var strippedDesc = '';
-			console.log(strippedDesc);
+			// console.log(strippedDesc);
 
 			res.render('game-page', {
 				title: jsonGame.results.name,
