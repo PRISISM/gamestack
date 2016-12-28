@@ -1,3 +1,9 @@
 extends layout
 
 block content
+	div.container
+		div.list-group
+			for user in users
+				a(href=user.username).list-group-item
+					span.badge= Object.keys(user.games).length + ' Games'
+					|	#{user.username}

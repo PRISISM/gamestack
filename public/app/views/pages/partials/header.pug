@@ -15,10 +15,6 @@
         li(class=(title == 'All Users') ? 'active' : undefined)
           a(href='/users') All Users
 
-        if user
-            li(class=(title == 'Contact') ? 'active' : undefined)
-              a(href='/contact') Contact
-
       ul.nav.navbar-nav.navbar-right
         if user
             li(class=(title == 'Account') ? 'active' : undefined)

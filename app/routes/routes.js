@@ -23,15 +23,16 @@ module.exports = function(app, passport) {
     router.post('/collection/add', function(req, res) {
 
         request({
-            url: 'http://www.giantbomb.com/api/game/3030-' + req.body.game,
-            qs: {
-                api_key: config.gbApiKey,
-                format: 'json',
-                field_list : 'name,id,image'
+                url: 'http://www.giantbomb.com/api/game/3030-' + req.body.game,
+                qs: {
+                    api_key: config.gbApiKey,
+                    format: 'json',
+                    field_list: 'name,id,image'
+                },
+                headers: {
+                    'User-Agent': 'request'
+                }
             },
-            headers: {
-                'User-Agent': 'request'
-            }}, 
             function(err, response, body) {
                 jsonGame = JSON.parse(body);
 
@@ -41,7 +42,10 @@ module.exports = function(app, passport) {
                 req.user.save(function(err, user) {
                     console.log(user);
                 });
-                res.json({success : "Updated Successfully", status : 200});
+                res.json({
+                    success: "Updated Successfully",
+                    status: 200
+                });
             });
 
     });
@@ -55,7 +59,10 @@ module.exports = function(app, passport) {
             console.log(user);
         });
 
-        res.json({success : "Updated Successfully", status : 200});
+        res.json({
+            success: "Updated Successfully",
+            status: 200
+        });
         // res.redirect(req.get('referer'));
 
     });
@@ -85,7 +92,7 @@ module.exports = function(app, passport) {
                     title: foundUser.username,
                     foundUser: foundUser,
                     user: req.user
-                    });
+                });
         });
     });
 
@@ -95,7 +102,11 @@ module.exports = function(app, passport) {
             if (err)
                 return next(err);
 
-            res.json(users);
+            return res.render('all-users', {
+                title: 'All Users',
+                users: users,
+                user: req.user
+            });
         });
 
     });
