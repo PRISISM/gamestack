@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 	request({
 			url: 'http://giantbomb.com/api/games',
 			qs: {
-				api_key: ENV[gbApiKey],
+				api_key: process.env.gbApiKey,
 				format: 'json',
 				field_list: 'name,id,image',
 				offset: (req.query.page * 100) - 100
@@ -47,7 +47,7 @@ router.get('/search', function(req, res, next) {
 	request({
 			url: 'http://giantbomb.com/api/search',
 			qs: {
-				api_key: ENV[gbApiKey],
+				api_key: process.env.gbApiKey,
 				format: 'json',
 				resources: 'game',
 				query: req.query.keyword,
@@ -85,7 +85,7 @@ router.get('/:game', function(req, res, next) {
 	request({
 		url: 'http://www.giantbomb.com/api/game/3030-' + req.id,
 		qs: {
-			api_key: ENV[gbApiKey],
+			api_key: process.env.gbApiKey,
 			format: 'json'
 		},
 		headers: {
@@ -131,7 +131,7 @@ router.get('/test', function(req, res) {
 	request({
 			url: 'http://giantbomb.com/api/search',
 			qs: {
-				api_key: ENV[gbApiKey],
+				api_key: process.env.gbApiKey,
 				format: 'json',
 				field_list: 'name,id,image'
 
@@ -148,11 +148,6 @@ router.get('/test', function(req, res) {
 
 
 		});
-
-	// res.render('game', {
-	// 	title: 'Games',
-	// 	user: req.user
-	// });
 
 });
 

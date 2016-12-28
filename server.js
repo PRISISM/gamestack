@@ -39,7 +39,7 @@ app.locals.moment = require('moment');
 app.set('view options', { pretty: true });
 
 // Connect MongoDB
-mongoose.connect(ENV[database], function(err,db){
+mongoose.connect(process.env.database, function(err,db){
     if (!err){
         console.log('Connected to db!');
     } else{
@@ -110,5 +110,5 @@ app.use(function(req, res, next) {
 //   }
 // ));
 // Start Server
-app.listen(ENV[port]);
-console.log('Server started on port', ENV[port]);
+app.listen(process.env.port);
+console.log('Server started on port', process.env.port);

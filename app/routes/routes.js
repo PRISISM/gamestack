@@ -25,7 +25,7 @@ module.exports = function(app, passport) {
         request({
                 url: 'http://www.giantbomb.com/api/game/3030-' + req.body.game,
                 qs: {
-                    api_key: ENV[gbApiKey],
+                    api_key: process.env.gbApiKey,
                     format: 'json',
                     field_list: 'name,id,image'
                 },
