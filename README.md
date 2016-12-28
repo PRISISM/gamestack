@@ -25,10 +25,3 @@ This was my first approach at Node and building larger scale web applications in
 * The plethora of external JavaScript libraries makes mundane tasks simple, but obfuscates logic.
 Consider writing the code at a low level first, or read the documentation thoroughly. 
 
-## Installation
-`git clone https://github.com/toashel/gamestack.git`
-1. cd gamestack
-2. npm install
-3. npm start
-4. navigate to the port specified 
-
