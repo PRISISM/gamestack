@@ -23,18 +23,6 @@ block content
 				div.row-fluid.platform-labels-row
 					for platform in body.results.platforms
 							span.label.label-default.platform-labels=platform.abbreviation
-	//- script.
-	//- 	console.log('#{body.results.description}');
-	//- 	var bodyDesc = '#{body.results.description}';
-	//- 	console.log(bodyDesc);
-	//- 	var strippedDesc = bodyDesc.replace(/<\/?a[^>]*>/g, "");
-
-			//- var bodyDesc = #{body.results.description};
-			//- //- console.log(bodyDesc);
-			//- var gameDesc = $('<div>' + bodyDesc + '</div>');
-			//- gameDesc.find('a').replaceWith(function() { return this.childNodes; });
-			//- var strippedDesc = gameDesc.html();
-			//- //- console.log(strippedDesc);
 
 	div.container-fluid
 		div.col-md-12

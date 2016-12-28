@@ -109,11 +109,12 @@ router.get('/:game', function(req, res, next) {
 			if (jsonGame.results.description){
 				var bodyDesc = jsonGame.results.description;
 				var strippedDesc = bodyDesc.replace(/<\/?a[^>]*>/g, "");
+				var strippedDesc = strippedDesc.replace(/(http)/g, "https");
 			}
 
 			else
 				var strippedDesc = '';
-			// console.log(strippedDesc);
+			console.log(strippedDesc);
 
 			res.render('game-page', {
 				title: jsonGame.results.name,
