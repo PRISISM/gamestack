@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 // var crypto = require('crypto');
 // var bcrypt = require('bcrypt');
-var config = require('../../config');
+// var config = require('../../config');
 var Schema = mongoose.Schema;
 var passportLocalMongoose = require('passport-local-mongoose');
 
