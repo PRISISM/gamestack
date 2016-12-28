@@ -24,7 +24,8 @@ router.post('/register', function(req, res, next) {
     }), req.body.password, function(err, user) {
         if (err) {
             return res.render('register', {
-                error: err.message
+                error: err.message,
+                title: 'Register'
             });
         }
 

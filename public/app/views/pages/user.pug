@@ -9,7 +9,6 @@ block content
 
 		if (Object.keys(foundUser.games).length != 0) 
 			for game in Object.keys(foundUser.games)
-				//- - console.log(game);
 				// for each game, request on server side 
 				// display name and thumb? 
 
@@ -21,3 +20,6 @@ block content
 							div.panel-body.user-panel-div
 								if foundUser.games[game].results.image.length !== 0
 									img.game-search-image(src=foundUser.games[game].results.image.small_url)
+					if user
+						if (user.username == foundUser.username)
+							button(type='button', onclick="removeGame('" + game + "')").btn.btn-danger.btn-block Remove from Stack

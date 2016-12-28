@@ -41,7 +41,22 @@ module.exports = function(app, passport) {
                 req.user.save(function(err, user) {
                     console.log(user);
                 });
+                res.json({success : "Updated Successfully", status : 200});
             });
+
+    });
+
+    // Remove from a user's collection
+    router.post('/collection/remove', function(req, res) {
+        // console.log(req.user, req.body.game);
+        delete req.user.games[req.body.game];
+        req.user.markModified('games');
+        req.user.save(function(err, user) {
+            console.log(user);
+        });
+
+        res.json({success : "Updated Successfully", status : 200});
+        // res.redirect(req.get('referer'));
 
     });
 

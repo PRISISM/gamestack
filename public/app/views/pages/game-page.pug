@@ -1,5 +1,42 @@
 extends layout
 
 block content
+
+
 	div.container
-		p #{body.results.id}
+		div.col-md-2
+			div.single-game-image-container
+				if body.results.image.thumb_url
+					img.game-search-image(src=body.results.image.small_url)
+		div.col-md-10
+			h4.home-title #{body.results.name}
+				
+			if body.results.original_release_date
+				p.text-muted.game-result-subtext Released on #{moment(body.results.original_release_date).format('DD MMMM, YYYY')}
+			else
+				p.text-muted.game-result-subtext Unknown release date
+
+			if body.results.deck
+				p.lead #{body.results.deck}
+
+			if body.results.platforms
+				div.row-fluid.platform-labels-row
+					for platform in body.results.platforms
+							span.label.label-default.platform-labels=platform.abbreviation
+	//- script.
+	//- 	console.log('#{body.results.description}');
+	//- 	var bodyDesc = '#{body.results.description}';
+	//- 	console.log(bodyDesc);
+	//- 	var strippedDesc = bodyDesc.replace(/<\/?a[^>]*>/g, "");
+
+			//- var bodyDesc = #{body.results.description};
+			//- //- console.log(bodyDesc);
+			//- var gameDesc = $('<div>' + bodyDesc + '</div>');
+			//- gameDesc.find('a').replaceWith(function() { return this.childNodes; });
+			//- var strippedDesc = gameDesc.html();
+			//- //- console.log(strippedDesc);
+
+	div.container-fluid
+		div.col-md-12
+			- var html = desc
+			P!= html
