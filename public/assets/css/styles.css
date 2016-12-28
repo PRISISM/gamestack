@@ -1,7 +1,13 @@
 /* Main and Header/Footer */
 
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
-	padding-top: 65px;
+  padding-top: 65px;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
 
 .footer {
