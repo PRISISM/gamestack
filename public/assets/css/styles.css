@@ -86,6 +86,10 @@ body {
 	text-decoration: none;
 }
 
+.remove-button {
+	margin-bottom: 20px;
+}
+
 /* Game Page */
 
 .single-game-image-container {

@@ -19,7 +19,9 @@ block content
 								p.user-panel-title #{foundUser.games[game].results.name}
 							div.panel-body.user-panel-div
 								if foundUser.games[game].results.image.length !== 0
-									img.game-search-image(src=foundUser.games[game].results.image.small_url)
+									img.game-search-image(src=foundUser.games[game].results.image.medium_url)
 					if user
 						if (user.username == foundUser.username)
-							button(type='button', onclick="removeGame('" + game + "')").btn.btn-danger.btn-block Remove from Stack
+							button(type='button', onclick="removeGame('" + game + "')").btn.btn-danger.btn-block.remove-button Remove from Stack
+		script.
+			$('.user-panel-container').matchHeight();
