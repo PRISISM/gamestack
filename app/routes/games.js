@@ -109,13 +109,15 @@ router.get('/:game', function(req, res, next) {
 			if (jsonGame.results.description){
 				var bodyDesc = jsonGame.results.description;
 				var strippedDesc = bodyDesc.replace(/<\/?a[^>]*>/g, "");
-				var strippedDesc = strippedDesc.replace(/(http)/g, "https");
+				var strippedDesc = strippedDesc.replace(/<figure(.*?)<\/figure>/g, "");
+				var strippedDesc = strippedDesc.replace(/<\/?img[^>]*>/g, "");
+				var strippedDesc = strippedDesc.replace(/<figcaption(.*?)<\/figcaption>/g, "");
+
 			}
 
 			else
 				var strippedDesc = '';
-			// console.log(strippedDesc);
-
+			
 			res.render('game-page', {
 				title: jsonGame.results.name,
 				body: jsonGame,
