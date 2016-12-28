@@ -5,7 +5,7 @@
 Users are able to add and remove games from their 'stack', and also view the 'stacks' of other users. 
 It features safe and persistent sessions, responsive design, and descriptive error handling.
 
-A running version of the app can be found at [https://gamestack.herokuapp.com]
+A running version of the app can be found at https://gamestack.herokuapp.com
 
 The following technologies/tools were used for developing *gamestack*:
 * Node.js
